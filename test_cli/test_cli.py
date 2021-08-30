@@ -9,19 +9,23 @@ def safe_open(path, mode):
     Path(root).mkdir(parents=True, exist_ok=True)
     return open(path, mode)
 
-@click.command()
+@click.group()
+def cli():
+    pass
+
+@cli.command()
 @click.option('-n', '--name', type=str, help='Name to greet', default='World')
 def hello(name):
     click.echo(f'Hello {name}')
 
-@click.command()
+@cli.command()
 @click.option('-a', type=int, help='first number to add')
 @click.option('-b', type=int, help='second number to add')
 def add(a, b):
     answer = _add(a, b)
     click.echo(f'{a} + {b} = {answer}')
 
-@click.command()
+@cli.command()
 @click.option('-m', '--message', type=str, help='journal entry')
 @click.option('-p', '--path', type=str, help='journal file path')
 def entry(message, path):
@@ -30,7 +34,7 @@ def entry(message, path):
     file.close()
 
 
-@click.command()
+@cli.command()
 @click.option('-c', '--config_path', help='config file absolute path')
 @click.option('-u', '--update', prompt=False)
 def config(config_path, update):
