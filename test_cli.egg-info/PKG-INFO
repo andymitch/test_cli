@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: test-cli
+Version: 0.0.1
+Summary: <short description for the tool>
+Home-page: UNKNOWN
+Author: John Doe
+Author-email: john.doe@foo.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
